@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Retour vers Mes comptes</title>
+  <style>
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #0a0e15; color: #e9effa;
+           font-family: "Segoe UI", system-ui, sans-serif; }
+    .box { text-align: center; padding: 32px; }
+    a { color: #5b8cff; }
+  </style>
+  <script>
+    (function () {
+      var target = 'http://127.0.0.1:4321/callback';
+      var url = target + location.search + location.hash;
+      location.replace(url);
+    })();
+  </script>
+</head>
+<body>
+  <div class="box">
+    <h1>Retour vers l’application…</h1>
+    <p>Si rien ne se passe, <a id="manual" href="http://127.0.0.1:4321/">ouvre le tableau de bord</a>.</p>
+  </div>
+  <script>
+    document.getElementById('manual').href = 'http://127.0.0.1:4321/callback' + location.search + location.hash;
+  </script>
+</body>
+</html>
